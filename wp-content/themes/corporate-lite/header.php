@@ -25,6 +25,7 @@
                 </div><!-- top-right --><div class="clear"></div>
         </div><!-- aligner -->
 </div><!-- top-bar -->
+
 <div class="header">
             		<div class="aligner">
                     		<div class="logo">
@@ -33,14 +34,15 @@
                                     </a>
                                     <p><?php esc_attr(bloginfo('description')); ?></p>
                              </div>
-                             <div class="toggle">
+                             <!-- <div class="toggle">
                             <a class="toggleMenu" href="#"><?php _e('Menu','corporate-lite'); ?></a>
-                            </div>                           
+                            </div>    -->                        
                             <div class="nav">
 								<?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
                             </div><!-- nav --><div class="clear"></div>
                     </div><!-- aligner -->
             </div><!-- header -->
+            
 <?php if ( is_front_page() ) { ?>
     <div class="slider-main">
        <?php
@@ -76,17 +78,20 @@
                 <div id="slider" class="nivoSlider">
                 <?php 
                 foreach( $slAr as $sv ){
-                    $n++; ?><img src="<?php echo esc_url($sv['image_src']); ?>" alt="<?php echo esc_attr($sv['image_title']);?>" title="<?php if ( ($sv['image_title']!='') && ($sv['image_desc']!='')) { echo '#slidecaption'.$n ; } ?>"/><?php
+                    $n++; ?>
+                   <img src="<?php echo esc_url($sv['image_src']); ?>" alt="<?php echo esc_attr($sv['image_title']);?>" title="<?php if ( ($sv['image_title']!='') && ($sv['image_desc']!='')) { echo '#slidecaption'.$n ; } ?>"/>                    
+                    <?php
                     $slideno[] = $n;
                 }
                 ?>
-                </div><?php
+                </div>
+                <?php
                 foreach( $slideno as $sln ){ ?>
                     <div id="slidecaption<?php echo $sln; ?>" class="nivo-html-caption">
                     <div class="slide-cap">
                         <?php if( get_theme_mod('slide_title'.$sln, true) != '' ){ ?>
-                            <h4><?php echo esc_attr(get_theme_mod('slide_title'.$sln, __('Slide Title ','corporate-lite').$sln)); ?></h4>
-                        <?php } ?>
+                            <h4><?php echo esc_attr(get_theme_mod('slide_title'.$sln, __('Slide Title ','corporate-lite').$sln)); ?></h4>                     
+                        <?php } ?>                        
                         <?php if( get_theme_mod('slide_desc'.$sln, true) != '' ){ ?>
                             <p><?php echo esc_attr(get_theme_mod('slide_desc'.$sln, __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur','corporate-lite'))); ?></p>
                         <?php } ?>
@@ -104,6 +109,7 @@
         </div>
       </div><!-- slider -->
 <?php } ?>
+
 <?php if( is_front_page() ) { ?>
 <div class="grey-strip">
 	<div class="aligner">

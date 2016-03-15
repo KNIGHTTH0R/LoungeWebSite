@@ -69,9 +69,10 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed">
-	<header id="branding" role="banner">
-			<hgroup>
-				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+	<header id="branding" role="banner">			
+		   <hgroup>
+				<!-- <h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>-->
+				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
 
@@ -90,7 +91,8 @@
 						$header_image_width = HEADER_IMAGE_WIDTH;
 					}
 					?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> -->
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php
 					/*
 					 * The header image.
@@ -111,8 +113,8 @@
 							$header_image_height = HEADER_IMAGE_HEIGHT;
 						}
 						?>
-					<img src="<?php header_image(); ?>" width="<?php echo esc_attr( $header_image_width ); ?>" height="<?php echo esc_attr( $header_image_height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-				<?php endif; // end check for featured image or standard header ?>
+					<img src="<?php header_image(); ?>" width="<?php echo esc_attr( $header_image_width ); ?>" height="<?php echo esc_attr( $header_image_height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />				
+					<?php endif; // end check for featured image or standard header ?>
 			</a>
 			<?php endif; // end check for removed header image ?>
 
@@ -139,7 +141,6 @@
 				<?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #access -->
-	</header><!-- #branding -->
-
+</header><!-- #branding --> 
 
 	<div id="main">

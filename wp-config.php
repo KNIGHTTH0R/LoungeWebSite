@@ -29,7 +29,9 @@ define('DB_USER', 'shirley');
 define('DB_PASSWORD', '');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'eco71147');//replace 'localhost'
+//define('DB_HOST', 'eco71147.eig.ecogrp.ca');//replace 'localhost'
+
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
