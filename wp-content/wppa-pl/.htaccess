@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /C:/xampp/htdocs/loungetest/wp-content/wppa-pl
+RewriteRule ^New-Album/(.*) /C:/xampp/htdocs/loungetest/wp-content/uploads/wppa-source/album-1/$1 [NC]
+</IfModule>
