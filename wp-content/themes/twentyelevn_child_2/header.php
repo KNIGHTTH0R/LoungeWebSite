@@ -29,7 +29,7 @@
 	global $page, $paged;
 
 	wp_title( '|', true, 'right' );
-
+  
 	// Add the blog name.
 	bloginfo( 'name' );
 
@@ -43,6 +43,11 @@
 		echo esc_html( ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) ) );
 
 	?></title>
+	
+<header> 
+<title><?php post_class(); ?>><i class="icon-edit"></i><?php the_title(); ?></title>
+</header>
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -72,7 +77,12 @@
 	<header id="branding" role="banner">			
 		   <hgroup>
 				<!-- <h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>-->
-				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+				
+		        <?php if ( is_front_page() ) { ?>
+					<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' )); ?>" rel="home"><?php bloginfo("name"); ?></a></span></h1>
+				<?php }?>
+				
+				<h1 id="site-title"><span><a href="."><?php wp_title(''); ?></a></span></h1>	
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
 
